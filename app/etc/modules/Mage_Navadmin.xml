@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mage_Navadmin>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Mage_Navadmin>
+    </modules>
+</config>

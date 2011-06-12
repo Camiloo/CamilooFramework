@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Camilooframework
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Camilooframework to newer
+ * versions in the future. If you wish to customize Camilooframework for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Mage
+ * @package     Mage_User
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <api>
+        <resources>
+            <user translate="title" module="user">
+                <model>user/user_api</model>
+                <title>User API</title>
+                <acl>user</acl>
+                <methods>
+                    <list translate="title" module="user">
+                        <title>Retrieve users</title>
+                        <method>items</method>
+                        <acl>user/info</acl>
+                    </list>
+                    <create translate="title" module="user">
+                        <title>Create user</title>
+                        <acl>user/create</acl>
+                    </create>
+                    <info translate="title" module="user">
+                        <title>Retrieve user data</title>
+                        <acl>user/info</acl>
+                    </info>
+                    <update translate="title" module="user">
+                        <title>Update user data</title>
+                        <acl>user/update</acl>
+                    </update>
+                    <delete translate="title" module="user">
+                        <title>Delete user</title>
+                        <acl>user/delete</acl>
+                    </delete>
+                </methods>
+                <faults module="user">
+                    <data_invalid>
+                        <code>100</code>
+                        <message>Invalid user data. Details in error message.</message>
+                    </data_invalid>
+                    <filters_invalid>
+                        <code>101</code>
+                        <message>Invalid filters specified. Details in error message.</message>
+                    </filters_invalid>
+                    <not_exists>
+                        <code>102</code>
+                        <message>User not exists.</message>
+                    </not_exists>
+                    <not_deleted>
+                        <code>103</code>
+                        <message>User not deleted. Details in error message.</message>
+                    </not_deleted>
+                </faults>
+            </user>
+            <user_group>
+                <model>user/group_api</model>
+                <title>User's Groups API</title>
+                <acl>user</acl>
+                <methods>
+                    <list translate="title" module="user">
+                        <title>Retrieve user groups</title>
+                        <method>items</method>
+                    </list>
+                </methods>
+            </user_group>
+            <user_address>
+                <model>user/address_api</model>
+                <title>User Address API</title>
+                <acl>user/address</acl>
+                <methods>
+                    <list translate="title" module="user">
+                        <title>Retrieve user addresses</title>
+                        <method>items</method>
+                        <acl>user/address/info</acl>
+                    </list>
+                    <create translate="title" module="user">
+                        <title>Create user address</title>
+                        <acl>user/address/create</acl>
+                    </create>
+                    <info translate="title" module="user">
+                        <title>Retrieve address data</title>
+                        <acl>user/address/info</acl>
+                    </info>
+                    <update translate="title" module="user">
+                        <title>Update user address data</title>
+                        <acl>user/address/update</acl>
+                    </update>
+                    <delete translate="title" module="user">
+                        <title>Delete user address</title>
+                        <acl>user/address/delete</acl>
+                    </delete>
+                </methods>
+                <faults module="user">
+                    <data_invalid>
+                        <code>100</code>
+                        <message>Invalid address data. Details in error message.</message>
+                    </data_invalid>
+                    <user_not_exists>
+                        <code>101</code>
+                        <message>User not exists.</message>
+                    </user_not_exists>
+                    <not_exists>
+                        <code>102</code>
+                        <message>Address not exists.</message>
+                    </not_exists>
+                    <not_deleted>
+                        <code>103</code>
+                        <message>Address not deleted. Details in error message.</message>
+                    </not_deleted>
+                </faults>
+            </user_address>
+        </resources>
+        <v2>
+            <resources_function_prefix>
+                <user>userUser</user>
+                <user_group>userGroup</user_group>
+                <user_address>userAddress</user_address>
+            </resources_function_prefix>
+        </v2>
+        <acl>
+            <resources>
+                <user translate="title" module="user">
+                     <title>Users</title>
+                     <sort_order>3</sort_order>
+                     <create translate="title" module="user">
+                        <title>Create</title>
+                     </create>
+                     <update translate="title" module="user">
+                        <title>Update</title>
+                     </update>
+                     <delete translate="title" module="user">
+                        <title>Delete</title>
+                     </delete>
+                     <info translate="title" module="user">
+                        <title>Retrieve user info</title>
+                     </info>
+                     <address translate="title" module="user">
+                         <title>Addresses</title>
+                         <sort_order>100</sort_order>
+                         <create translate="title" module="user">
+                            <title>Create</title>
+                         </create>
+                         <update translate="title" module="user">
+                            <title>Update</title>
+                         </update>
+                         <delete translate="title" module="user">
+                            <title>Delete</title>
+                         </delete>
+                         <info translate="title" module="user">
+                            <title>Retrieve address info</title>
+                         </info>
+                     </address>
+                </user>
+            </resources>
+        </acl>
+    </api>
+</config>

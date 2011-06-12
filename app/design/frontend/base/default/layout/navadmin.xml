@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+		<reference name="top.navadmin">
+			<block type="navadmin/navadmin" name="navadmin" template="navadmin/top.phtml"/>
+ 	   </reference>
+	</default>
+    <navadmin_index_index>
+        <reference name="content">
+            <block type="navadmin/navadmin" name="navadmin" template="navadmin/top.phtml" />
+        </reference>
+    </navadmin_index_index>
+</layout>

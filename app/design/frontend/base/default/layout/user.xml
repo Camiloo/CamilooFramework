@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Camilooframework
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Camilooframework to newer
+ * versions in the future. If you wish to customize Camilooframework for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+Supported layout update handles (action):
+- user_account_index
+- user_address_index
+- user_address_view
+- user_account_login
+- user_account_logoutsuccess
+- user_account_create
+- user_account_forgotpassword
+- user_account_confirmation
+- user_account_edit
+
+Supported layout update handles (special):
+- default
+
+-->
+<layout version="0.1.0">
+
+<!--
+Default layout, loads most of the pages
+-->
+
+    <default>
+        <!-- Mage_User -->
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="user"><label>My Account</label><url helper="user/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>10</position></action>
+        </reference>
+    </default>
+
+<!--
+Load this update on every page when user is logged in
+-->
+
+    <user_logged_in>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="user"><label>Log Out</label><url helper="user/getLogoutUrl"/><title>Log Out</title><prepare/><urlParams/><position>100</position></action>
+        </reference>
+    </user_logged_in>
+
+<!--
+Load this update on every page when user is logged out
+-->
+
+    <user_logged_out>
+        <!---<reference name="right">
+            <block type="user/form_login" name="user_form_mini_login" before="-" template="user/form/mini.login.phtml"/>
+        </reference>-->
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="user"><label>Log In</label><url helper="user/getLoginUrl"/><title>Log In</title><prepare/><urlParams/><position>100</position></action>
+        </reference>
+        <remove name="wishlist_sidebar"></remove>
+        <remove name="reorder"></remove>
+    </user_logged_out>
+
+<!--
+Layout for user login page
+-->
+
+    <user_account_login translate="label">
+        <label>User Account Login Form</label>
+        <!-- Mage_User -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="user/form_login" name="user_form_login" template="user/form/login.phtml"/>
+        </reference>
+    </user_account_login>
+
+<!--
+Layout for user log out page
+-->
+
+    <user_account_logoutsuccess translate="label">
+        <label>User Account Logout Success</label>
+        <!-- Mage_User -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="user_logout" template="user/logout.phtml"/>
+        </reference>
+    </user_account_logoutsuccess>
+
+<!--
+New user registration
+-->
+
+    <user_account_create translate="label">
+        <label>User Account Registration Form</label>
+        <!-- Mage_User -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="user/form_register" name="user_form_register" template="user/form/register.phtml">
+                <block type="page/html_wrapper" name="user.form.register.fields.before" as="form_fields_before" translate="label">
+                    <label>Form Fields Before</label>
+                </block>
+            </block>
+        </reference>
+    </user_account_create>
+
+    <user_account_forgotpassword translate="label">
+        <label>User Forgot Password Form</label>
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="user"><title>Password forgotten</title></action>
+        </reference>
+        <reference name="content">
+            <!--<block type="core/template" name="forgotPassword" template="user/form/forgotpassword.phtml"/>-->
+            <block type="user/account_forgotpassword" name="forgotPassword" template="user/form/forgotpassword.phtml"/>
+        </reference>
+    </user_account_forgotpassword>
+
+    <user_account_confirmation>
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="user"><title>Send confirmation link</title></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="accountConfirmation" template="user/form/confirmation.phtml"/>
+        </reference>
+    </user_account_confirmation>
+
+    <user_account_edit translate="label">
+        <label>User Account Edit Form</label>
+        <update handle="user_account"/>
+        <reference name="root">
+            <action method="setHeaderTitle" translate="title" module="user"><title>Edit Account Info</title></action>
+        </reference>
+        <reference name="my.account.wrapper">
+            <block type="user/form_edit" name="user_edit" template="user/form/edit.phtml"/>
+        </reference>
+
+        <reference name="left">
+          <action method="unsetChild"><name>left.permanent.callout</name></action>
+        </reference>
+    </user_account_edit>
+
+<!--
+User account pages, rendered for all tabs in dashboard
+-->
+
+    <user_account translate="label">
+        <label>User My Account (All Pages)</label>
+        <!--remove name="catalog.compare.sidebar"/>
+        <remove name="sale.reorder.sidebar"/-->
+        <!-- Mage_User -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        
+        <reference name="content">
+            <block type="page/html_wrapper" name="my.account.wrapper" translate="label">
+                <label>My Account Wrapper</label>
+                <action method="setElementClass"><value>my-account</value></action>
+            </block>
+        </reference>
+
+        <reference name="left">
+            <block type="user/account_navigation" name="user_account_navigation" before="-" template="user/account/navigation.phtml">
+                <action method="addLink" translate="label" module="user"><name>account</name><path>user/account/</path><label>Account Dashboard</label></action>
+                <action method="addLink" translate="label" module="user"><name>account_edit</name><path>user/account/edit/</path><label>Account Information</label></action>
+                <action method="addLink" translate="label" module="user"><name>address_book</name><path>user/address/</path><label>Address Book</label></action>
+            </block>
+            <block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml">
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+            </block>
+            <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>            
+            <remove name="tags_popular"/>
+
+        </reference>
+    </user_account>
+
+<!--
+User account home dashboard layout
+-->
+
+    <user_account_index translate="label">
+        <label>User My Account Dashboard</label>
+        <update handle="user_account"/>
+        <!-- Mage_User -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="my.account.wrapper">
+            <block type="user/account_dashboard" name="user_account_dashboard" template="user/account/dashboard.phtml">
+                <block type="user/account_dashboard_hello" name="user_account_dashboard_hello" as="hello" template="user/account/dashboard/hello.phtml"/>
+                <block type="core/template" name="user_account_dashboard_top" as="top" />
+                <block type="user/account_dashboard_info" name="user_account_dashboard_info" as="info" template="user/account/dashboard/info.phtml"/>
+                <block type="user/account_dashboard_newsletter" name="user_account_dashboard_newsletter" as="newsletter" template="user/account/dashboard/newsletter.phtml"/>
+                <block type="user/account_dashboard_address" name="user_account_dashboard_address" as="address" template="user/account/dashboard/address.phtml"/>
+            </block>
+        </reference>
+
+    </user_account_index>
+
+<!--
+User account address book
+-->
+
+    <user_address_index translate="label">
+        <label>User My Account Address Book</label>
+        <!-- Mage_User -->
+        <update handle="user_account"/>
+        <reference name="my.account.wrapper">
+            <block type="user/address_book" name="address_book" template="user/address/book.phtml"/>
+        </reference>
+    </user_address_index>
+
+<!--
+User account address edit page
+-->
+
+    <user_address_form translate="label">
+        <label>User My Account Address Edit Form</label>
+        <!-- Mage_User -->
+        <update handle="user_account"/>
+        <reference name="my.account.wrapper">
+            <block type="user/address_edit" name="user_address_edit" template="user/address/edit.phtml"/>
+        </reference>
+    </user_address_form>
+
+</layout>

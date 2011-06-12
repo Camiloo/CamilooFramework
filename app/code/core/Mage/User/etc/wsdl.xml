@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:typens="urn:{{var wsdl.name}}" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+    name="{{var wsdl.name}}" targetNamespace="urn:{{var wsdl.name}}">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Camilooframework">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" />
+            <complexType name="userUserEntityToCreate">
+                <all>
+                    <element name="user_id" type="xsd:int" minOccurs="0" />
+                    <element name="email" type="xsd:string" minOccurs="0" />
+                    <element name="firstname" type="xsd:string" minOccurs="0" />
+                    <element name="lastname" type="xsd:string" minOccurs="0" />
+                    <element name="password" type="xsd:string" minOccurs="0" />
+                    <element name="website_id" type="xsd:int" minOccurs="0" />
+                    <element name="store_id" type="xsd:int" minOccurs="0" />
+                    <element name="group_id" type="xsd:int" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="userUserEntity">
+                <all>
+                    <element name="user_id" type="xsd:int" minOccurs="0" />
+                    <element name="created_at" type="xsd:string" minOccurs="0" />
+                    <element name="updated_at" type="xsd:string" minOccurs="0" />
+                    <element name="increment_id" type="xsd:string" minOccurs="0" />
+                    <element name="store_id" type="xsd:int" minOccurs="0" />
+                    <element name="website_id" type="xsd:int" minOccurs="0" />
+                    <element name="created_in" type="xsd:string" minOccurs="0" />
+                    <element name="email" type="xsd:string" minOccurs="0" />
+                    <element name="firstname" type="xsd:string" minOccurs="0" />
+                    <element name="middlename" type="xsd:string" minOccurs="0" />
+                    <element name="lastname" type="xsd:string" minOccurs="0" />
+                    <element name="group_id" type="xsd:int" minOccurs="0" />
+                    <element name="prefix" type="xsd:string" minOccurs="0" />
+                    <element name="suffix" type="xsd:string" minOccurs="0" />
+                    <element name="dob" type="xsd:string" minOccurs="0" />
+                    <element name="taxvat" type="xsd:string" minOccurs="0" />
+                    <element name="confirmation" type="xsd:boolean" minOccurs="0" />
+                    <element name="password_hash" type="xsd:string" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="userUserEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:userUserEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="userGroupEntity">
+                <all>
+                    <element name="user_group_id" type="xsd:int" />
+                    <element name="user_group_code" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="userGroupEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:userGroupEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="userAddressEntityCreate">
+                <all>
+                    <element name="city" type="xsd:string" minOccurs="0" />
+                    <element name="company" type="xsd:string" minOccurs="0" />
+                    <element name="country_id" type="xsd:string" minOccurs="0" />
+                    <element name="fax" type="xsd:string" minOccurs="0" />
+                    <element name="firstname" type="xsd:string" minOccurs="0" />
+                    <element name="lastname" type="xsd:string" minOccurs="0" />
+                    <element name="middlename" type="xsd:string" minOccurs="0" />
+                    <element name="postcode" type="xsd:string" minOccurs="0" />
+                    <element name="prefix" type="xsd:string" minOccurs="0" />
+                    <element name="region_id" type="xsd:int" minOccurs="0" />
+                    <element name="region" type="xsd:string" minOccurs="0" />
+                    <element name="street" type="typens:ArrayOfString" minOccurs="0" />
+                    <element name="suffix" type="xsd:string" minOccurs="0" />
+                    <element name="telephone" type="xsd:string" minOccurs="0" />
+                    <element name="is_default_billing" type="xsd:boolean" minOccurs="0" />
+                    <element name="is_default_shipping" type="xsd:boolean" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="userAddressEntityItem">
+                <all>
+                    <element name="user_address_id" type="xsd:int" minOccurs="0" />
+                    <element name="created_at" type="xsd:string" minOccurs="0" />
+                    <element name="updated_at" type="xsd:string" minOccurs="0" />
+                    <element name="increment_id" type="xsd:string" minOccurs="0" />
+                    <element name="city" type="xsd:string" minOccurs="0" />
+                    <element name="company" type="xsd:string" minOccurs="0" />
+                    <element name="country_id" type="xsd:string" minOccurs="0" />
+                    <element name="fax" type="xsd:string" minOccurs="0" />
+                    <element name="firstname" type="xsd:string" minOccurs="0" />
+                    <element name="lastname" type="xsd:string" minOccurs="0" />
+                    <element name="middlename" type="xsd:string" minOccurs="0" />
+                    <element name="postcode" type="xsd:string" minOccurs="0" />
+                    <element name="prefix" type="xsd:string" minOccurs="0" />
+                    <element name="region" type="xsd:string" minOccurs="0" />
+                    <element name="region_id" type="xsd:int" minOccurs="0" />
+                    <element name="street" type="xsd:string" minOccurs="0" />
+                    <element name="suffix" type="xsd:string" minOccurs="0" />
+                    <element name="telephone" type="xsd:string" minOccurs="0" />
+                    <element name="is_default_billing" type="xsd:boolean" minOccurs="0" />
+                    <element name="is_default_shipping" type="xsd:boolean" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="userAddressEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:userAddressEntityItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+        </schema>
+    </types>
+    <message name="userUserListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="filters" type="typens:filters" />
+    </message>
+    <message name="userUserListResponse">
+        <part name="storeView" type="typens:userUserEntityArray" />
+    </message>
+    <message name="userUserCreateRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="userData" type="typens:userUserEntityToCreate" />
+    </message>
+    <message name="userUserCreateResponse">
+        <part name="result" type="xsd:int" />
+    </message>
+    <message name="userUserInfoRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="userId" type="xsd:int" />
+        <part name="attributes" type="typens:ArrayOfString" />
+    </message>
+    <message name="userUserInfoResponse">
+        <part name="userInfo" type="typens:userUserEntity" />
+    </message>
+    <message name="userUserUpdateRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="userId" type="xsd:int" />
+        <part name="userData" type="typens:userUserEntityToCreate" />
+    </message>
+    <message name="userUserUpdateResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="userUserDeleteRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="userId" type="xsd:int" />
+    </message>
+    <message name="userUserDeleteResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="userGroupListRequest">
+        <part name="sessionId" type="xsd:string" />
+    </message>
+    <message name="userGroupListResponse">
+        <part name="result" type="typens:userGroupEntityArray" />
+    </message>
+    <message name="userAddressListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="userId" type="xsd:int" />
+    </message>
+    <message name="userAddressListResponse">
+        <part name="result" type="typens:userAddressEntityArray" />
+    </message>
+    <message name="userAddressCreateRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="userId" type="xsd:int" />
+        <part name="addressData" type="typens:userAddressEntityCreate" />
+    </message>
+    <message name="userAddressCreateResponse">
+        <part name="result" type="xsd:int" />
+    </message>
+    <message name="userAddressInfoRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="addressId" type="xsd:int" />
+    </message>
+    <message name="userAddressInfoResponse">
+        <part name="info" type="typens:userAddressEntityItem" />
+    </message>
+    <message name="userAddressUpdateRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="addressId" type="xsd:int" />
+        <part name="addressData" type="typens:userAddressEntityCreate" />
+    </message>
+    <message name="userAddressUpdateResponse">
+        <part name="info" type="xsd:boolean" />
+    </message>
+    <message name="userAddressDeleteRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="addressId" type="xsd:int" />
+    </message>
+    <message name="userAddressDeleteResponse">
+        <part name="info" type="xsd:boolean" />
+    </message>
+    <portType name="{{var wsdl.handler}}PortType">
+        <operation name="userUserList">
+            <documentation>Retrieve users</documentation>
+            <input message="typens:userUserListRequest" />
+            <output message="typens:userUserListResponse" />
+        </operation>
+        <operation name="userUserCreate">
+            <documentation>Create user</documentation>
+            <input message="typens:userUserCreateRequest" />
+            <output message="typens:userUserCreateResponse" />
+        </operation>
+        <operation name="userUserInfo">
+            <documentation>Retrieve user data</documentation>
+            <input message="typens:userUserInfoRequest" />
+            <output message="typens:userUserInfoResponse" />
+        </operation>
+        <operation name="userUserUpdate">
+            <documentation>Update user data</documentation>
+            <input message="typens:userUserUpdateRequest" />
+            <output message="typens:userUserUpdateResponse" />
+        </operation>
+        <operation name="userUserDelete">
+            <documentation>Delete user</documentation>
+            <input message="typens:userUserDeleteRequest" />
+            <output message="typens:userUserDeleteResponse" />
+        </operation>
+        <operation name="userGroupList">
+            <documentation>Retrieve user groups</documentation>
+            <input message="typens:userGroupListRequest" />
+            <output message="typens:userGroupListResponse" />
+        </operation>
+        <operation name="userAddressList">
+            <documentation>Retrieve user addresses</documentation>
+            <input message="typens:userAddressListRequest" />
+            <output message="typens:userAddressListResponse" />
+        </operation>
+        <operation name="userAddressCreate">
+            <documentation>Create user address</documentation>
+            <input message="typens:userAddressCreateRequest" />
+            <output message="typens:userAddressCreateResponse" />
+        </operation>
+        <operation name="userAddressInfo">
+            <documentation>Retrieve user address data</documentation>
+            <input message="typens:userAddressInfoRequest" />
+            <output message="typens:userAddressInfoResponse" />
+        </operation>
+        <operation name="userAddressUpdate">
+            <documentation>Update user address data</documentation>
+            <input message="typens:userAddressUpdateRequest" />
+            <output message="typens:userAddressUpdateResponse" />
+        </operation>
+        <operation name="userAddressDelete">
+            <documentation>Delete user address</documentation>
+            <input message="typens:userAddressDeleteRequest" />
+            <output message="typens:userAddressDeleteResponse" />
+        </operation>
+    </portType>
+    <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="userUserList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userUserCreate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userUserInfo">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userUserUpdate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userUserDelete">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userGroupList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userAddressList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userAddressCreate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userAddressInfo">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userAddressUpdate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="userAddressDelete">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+</definitions>

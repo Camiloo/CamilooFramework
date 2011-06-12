@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <navadmin_adminhtml_navadmin_index>
+        <reference name="content">
+            <block type="navadmin/adminhtml_navadmin" name="navadmin" />
+        </reference>
+    </navadmin_adminhtml_navadmin_index>
+</layout>

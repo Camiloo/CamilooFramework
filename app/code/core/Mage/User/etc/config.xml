@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Camilooframework
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Camilooframework to newer
+ * versions in the future. If you wish to customize Camilooframework for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Mage
+ * @package     Mage_User
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Mage_User>
+            <version>1.6.0.0</version>
+        </Mage_User>
+    </modules>
+    <admin>
+        <fieldsets>
+            <user_dataflow>
+                <store_id>
+                    <system>1</system>
+                </store_id>
+                <store>
+                    <ignore>1</ignore>
+                </store>
+                <entity_id>
+                    <system>1</system>
+                    <ignore>1</ignore>
+                </entity_id>
+                <attribute_set_id>
+                    <system>1</system>
+                    <ignore>1</ignore>
+                </attribute_set_id>
+                <attribute_set>
+                    <ignore>1</ignore>
+                </attribute_set>
+                <entity_type_id>
+                    <system>1</system>
+                </entity_type_id>
+                <increment_id>
+                    <system>1</system>
+                    <ignore>1</ignore>
+                </increment_id>
+                <parent_id>
+                    <system>1</system>
+                </parent_id>
+                <created_at>
+                    <system>1</system>
+                </created_at>
+                <updated_at>
+                    <system>1</system>
+                </updated_at>
+                <group_id>
+                    <ignore>1</ignore>
+                </group_id>
+                <type_id>
+                    <system>1</system>
+                    <ignore>1</ignore>
+                </type_id>
+                <type>
+                    <ignore>1</ignore>
+                </type>
+                <created_in>
+                    <system>1</system>
+                    <ignore>1</ignore>
+                </created_in>
+                <website_id>
+                    <system>1</system>
+                </website_id>
+                <default_billing>
+                    <system>1</system>
+                </default_billing>
+                <default_shipping>
+                    <system>1</system>
+                </default_shipping>
+                <prefix>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <mapped>1</mapped>
+                </prefix>
+                <firstname>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <required>1</required>
+                    <mapped>1</mapped>
+                </firstname>
+                <middlename>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <mapped>1</mapped>
+                </middlename>
+                <lastname>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <required>1</required>
+                    <mapped>1</mapped>
+                </lastname>
+                <suffix>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <mapped>1</mapped>
+                </suffix>
+                <street_full>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </street_full>
+                <street1>
+                    <street>1</street>
+                </street1>
+                <street2>
+                    <street>1</street>
+                </street2>
+                <street3>
+                    <street>1</street>
+                </street3>
+                <street4>
+                    <street>1</street>
+                </street4>
+                <street5>
+                    <street>1</street>
+                </street5>
+                <street6>
+                    <street>1</street>
+                </street6>
+                <street7>
+                    <street>1</street>
+                </street7>
+                <street8>
+                    <street>1</street>
+                </street8>
+                <city>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </city>
+                <region>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </region>
+                <country>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <billing_required>1</billing_required>
+                    <shipping_required>1</shipping_required>
+                </country>
+                <postcode>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <billing_required>1</billing_required>
+                    <shipping_required>1</shipping_required>
+                </postcode>
+                <telephone>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </telephone>
+                <company>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </company>
+                <fax>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </fax>
+            </user_dataflow>
+        </fieldsets>
+    </admin>
+    <global>
+        <fieldsets>
+            <user_account>
+                <prefix>
+                    <create>1</create>
+                    <update>1</update>
+                    <name>1</name>
+                </prefix>
+                <firstname>
+                    <create>1</create>
+                    <update>1</update>
+                    <name>1</name>
+                </firstname>
+                <middlename>
+                    <create>1</create>
+                    <update>1</update>
+                    <name>1</name>
+                </middlename>
+                <lastname>
+                    <create>1</create>
+                    <update>1</update>
+                    <name>1</name>
+                </lastname>
+                <suffix>
+                    <create>1</create>
+                    <update>1</update>
+                    <name>1</name>
+                </suffix>
+                <email>
+                    <create>1</create>
+                    <update>1</update>
+                </email>
+                <password>
+                    <create>1</create>
+                </password>
+                <confirmation>
+                    <create>1</create>
+                </confirmation>
+                <dob>
+                    <create>1</create>
+                    <update>1</update>
+                </dob>
+                <taxvat>
+                    <create>1</create>
+                    <update>1</update>
+                </taxvat>
+                <gender>
+                    <create>1</create>
+                    <update>1</update>
+                </gender>
+            </user_account>
+        </fieldsets>
+        <user>
+            <address>
+                <formats>
+                    <text translate="title" module="user">
+                        <title>Text</title>
+                    </text>
+                    <oneline translate="title" module="user">
+                        <title>Text One Line</title>
+                    </oneline>
+                    <html translate="title" module="user">
+                        <title>HTML</title>
+                        <htmlEscape>true</htmlEscape>
+                    </html>
+                    <pdf translate="title" module="user">
+                        <title>PDF</title>
+                    </pdf>
+                    <js_template template="title" module="user">
+                        <title>JavaScript Template</title>
+                    </js_template>
+                </formats>
+            </address>
+        </user>
+        <blocks>
+            <user>
+                <class>Mage_User_Block</class>
+            </user>
+        </blocks>
+        <models>
+            <user>
+                <class>Mage_User_Model</class>
+                <resourceModel>user_resource</resourceModel>
+            </user>
+            <user_resource>
+                <class>Mage_User_Model_Resource</class>
+                <deprecatedNode>user_mysql4</deprecatedNode>
+                <entities>
+                    <entity>
+                        <table>user_entity</table>
+                    </entity>
+                    <address_entity>
+                        <table>user_address_entity</table>
+                    </address_entity>
+                    <value_prefix>
+                        <table>user_entity</table>
+                    </value_prefix>
+                    <user_group>
+                        <table>user_group</table>
+                    </user_group>
+                    <eav_attribute>
+                        <table>user_eav_attribute</table>
+                    </eav_attribute>
+                    <eav_attribute_website>
+                        <table>user_eav_attribute_website</table>
+                    </eav_attribute_website>
+                    <form_attribute>
+                        <table>user_form_attribute</table>
+                    </form_attribute>
+                </entities>
+            </user_resource>
+        </models>
+        <resources>
+            <user_setup>
+                <setup>
+                    <module>Mage_User</module>
+                    <class>Mage_User_Model_Resource_Setup</class>
+                </setup>
+            </user_setup>
+        </resources>
+        <template>
+            <email>
+                <user_create_account_email_template translate="label" module="user">
+                    <label>New account</label>
+                    <file>account_new.html</file>
+                    <type>html</type>
+                </user_create_account_email_template>
+                <user_create_account_email_confirmation_template translate="label" module="user">
+                    <label>New account confirmation key</label>
+                    <file>account_new_confirmation.html</file>
+                    <type>html</type>
+                </user_create_account_email_confirmation_template>
+                <user_create_account_email_confirmed_template translate="label" module="user">
+                    <label>New account confirmed</label>
+                    <file>account_new_confirmed.html</file>
+                    <type>html</type>
+                </user_create_account_email_confirmed_template>
+                <user_password_forgot_email_template translate="label" module="user">
+                    <label>New password</label>
+                    <file>password_new.html</file>
+                    <type>html</type>
+                </user_password_forgot_email_template>
+            </email>
+        </template>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Mage_User>
+                    <files>
+                        <default>Mage_User.csv</default>
+                    </files>
+                </Mage_User>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <secure_url>
+            <user>/user/</user>
+        </secure_url>
+        <events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <user_is_logged_in_observer>
+                        <class>user/observer</class>
+                        <method>beforeLoadLayout</method>
+                    </user_is_logged_in_observer>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>
+        <routers>
+            <user>
+                <use>standard</use>
+                <args>
+                    <module>Mage_User</module>
+                    <frontName>user</frontName>
+                </args>
+            </user>
+        </routers>
+        <translate>
+            <modules>
+                <Mage_User>
+                    <files>
+                        <default>Mage_User.csv</default>
+                    </files>
+                </Mage_User>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <user module="Mage_User">
+                    <file>user.xml</file>
+                </user>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <user>
+            <account_share>
+                <scope>1</scope>
+            </account_share>
+            <create_account>
+                <confirm>0</confirm>
+                <default_group>1</default_group>
+                <email_domain>emaildomain.com</email_domain>
+                <email_identity>general</email_identity>
+                <email_template>user_create_account_email_template</email_template>
+                <email_confirmation_template>user_create_account_email_confirmation_template</email_confirmation_template>
+                <email_confirmed_template>user_create_account_email_confirmed_template</email_confirmed_template>
+            </create_account>
+            <default>
+                <group>1</group>
+            </default>
+            <password>
+                <forgot_email_identity>support</forgot_email_identity>
+                <forgot_email_template>user_password_forgot_email_template</forgot_email_template>
+            </password>
+            <address>
+                <street_lines>2</street_lines>
+                <prefix_show/>
+                <prefix_options/>
+                <middlename_show/>
+                <suffix_show/>
+                <suffix_options/>
+                <dob_show/>
+                <gender_show/>
+            </address>
+            <startup>
+                <redirect_dashboard>1</redirect_dashboard>
+            </startup>
+            <address_templates>
+                <text>{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}
+{{depend company}}{{var company}}{{/depend}}
+{{if street1}}{{var street1}}
+{{/if}}
+{{depend street2}}{{var street2}}{{/depend}}
+{{depend street3}}{{var street3}}{{/depend}}
+{{depend street4}}{{var street4}}{{/depend}}
+{{if city}}{{var city}},  {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}
+{{var country}}
+T: {{var telephone}}
+{{depend fax}}F: {{var fax}}{{/depend}}</text>
+                <oneline>{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}, {{var street}}, {{var city}}, {{var region}} {{var postcode}}, {{var country}}</oneline>
+                <html>{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}&lt;br/&gt;
+{{depend company}}{{var company}}&lt;br /&gt;{{/depend}}
+{{if street1}}{{var street1}}&lt;br /&gt;{{/if}}
+{{depend street2}}{{var street2}}&lt;br /&gt;{{/depend}}
+{{depend street3}}{{var street3}}&lt;br /&gt;{{/depend}}
+{{depend street4}}{{var street4}}&lt;br /&gt;{{/depend}}
+{{if city}}{{var city}},  {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}&lt;br/&gt;
+{{var country}}&lt;br/&gt;
+{{depend telephone}}T: {{var telephone}}{{/depend}}
+{{depend fax}}&lt;br/&gt;F: {{var fax}}{{/depend}}</html>
+                <pdf>{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}|
+{{depend company}}{{var company}}|{{/depend}}
+{{if street1}}{{var street1}}
+{{/if}}
+{{depend street2}}{{var street2}}|{{/depend}}
+{{depend street3}}{{var street3}}|{{/depend}}
+{{depend street4}}{{var street4}}|{{/depend}}
+{{if city}}{{var city}},  {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}|
+{{var country}}|
+{{depend telephone}}T: {{var telephone}}{{/depend}}|
+{{depend fax}}&lt;br/&gt;F: {{var fax}}{{/depend}}|</pdf>
+                <js_template>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}&lt;br/&gt;#{company}&lt;br/&gt;#{street0}&lt;br/&gt;#{street1}&lt;br/&gt;#{street2}&lt;br/&gt;#{street3}&lt;br/&gt;#{city}, #{region}, #{postcode}&lt;br/&gt;#{country_id}&lt;br/&gt;T: #{telephone}&lt;br/&gt;F: #{fax}</js_template>
+            </address_templates>
+        </user>
+    </default>
+</config>

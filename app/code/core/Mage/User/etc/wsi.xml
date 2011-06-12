@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:typens="urn:{{var wsdl.name}}"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             name="{{var wsdl.name}}"
+             targetNamespace="urn:{{var wsdl.name}}">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:{{var wsdl.name}}">
+            <xsd:complexType name="userUserEntityToCreate">
+                <xsd:sequence>
+                    <xsd:element name="user_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="email" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="firstname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="lastname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="password" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="website_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="store_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="group_id" type="xsd:int" minOccurs="0" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userUserEntity">
+                <xsd:sequence>
+                    <xsd:element name="user_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="created_at" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="updated_at" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="increment_id" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="store_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="website_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="created_in" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="email" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="firstname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="middlename" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="lastname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="group_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="prefix" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="suffix" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="dob" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="taxvat" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="confirmation" type="xsd:boolean" minOccurs="0" />
+                    <xsd:element name="password_hash" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userUserEntityArray">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="complexObjectArray" type="typens:userUserEntity" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userGroupEntity">
+                <xsd:sequence>
+                    <xsd:element name="user_group_id" type="xsd:int" />
+                    <xsd:element name="user_group_code" type="xsd:string" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userGroupEntityArray">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="complexObjectArray" type="typens:userGroupEntity" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userAddressEntityCreate">
+                <xsd:sequence>
+                    <xsd:element name="city" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="company" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="country_id" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="fax" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="firstname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="lastname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="middlename" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="postcode" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="prefix" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="region_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="region" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="street" type="typens:ArrayOfString" minOccurs="0" />
+                    <xsd:element name="suffix" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="telephone" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="is_default_billing" type="xsd:boolean" minOccurs="0" />
+                    <xsd:element name="is_default_shipping" type="xsd:boolean" minOccurs="0" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userAddressEntityItem">
+                <xsd:sequence>
+                    <xsd:element name="user_address_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="created_at" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="updated_at" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="increment_id" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="city" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="company" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="country_id" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="fax" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="firstname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="lastname" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="middlename" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="postcode" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="prefix" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="region" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="region_id" type="xsd:int" minOccurs="0" />
+                    <xsd:element name="street" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="suffix" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="telephone" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="is_default_billing" type="xsd:boolean" minOccurs="0" />
+                    <xsd:element name="is_default_shipping" type="xsd:boolean" minOccurs="0" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="userAddressEntityArray">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="complexObjectArray" type="typens:userAddressEntityItem" />
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+            <xsd:element name="userUserListRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="filters" type="typens:filters" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserListResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="typens:userUserEntityArray" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserCreateRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userData" type="typens:userUserEntityToCreate" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserCreateResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserInfoRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userId" type="xsd:int" />
+                        <xsd:element minOccurs="0" maxOccurs="1" name="attributes" type="typens:ArrayOfString" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserInfoResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="typens:userUserEntity" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserUpdateRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userId" type="xsd:int" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userData" type="typens:userUserEntityToCreate" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserUpdateResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserDeleteRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userId" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userUserDeleteResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userGroupListRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userGroupListResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="typens:userGroupEntityArray" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressListRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userId" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressListResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="typens:userAddressEntityArray" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressCreateRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="userId" type="xsd:int" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="addressData" type="typens:userAddressEntityCreate" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressCreateResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressInfoRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="addressId" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressInfoResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="typens:userAddressEntityItem" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressUpdateRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="addressId" type="xsd:int" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="addressData" type="typens:userAddressEntityCreate" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressUpdateResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressDeleteRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="1" name="addressId" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="userAddressDeleteResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="userUserListRequest">
+        <wsdl:part name="parameters" element="typens:userUserListRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserListResponse">
+        <wsdl:part name="parameters" element="typens:userUserListResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserCreateRequest">
+        <wsdl:part name="parameters" element="typens:userUserCreateRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserCreateResponse">
+        <wsdl:part name="parameters" element="typens:userUserCreateResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserInfoRequest">
+        <wsdl:part name="parameters" element="typens:userUserInfoRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserInfoResponse">
+        <wsdl:part name="parameters" element="typens:userUserInfoResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserUpdateRequest">
+        <wsdl:part name="parameters" element="typens:userUserUpdateRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserUpdateResponse">
+        <wsdl:part name="parameters" element="typens:userUserUpdateResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserDeleteRequest">
+        <wsdl:part name="parameters" element="typens:userUserDeleteRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userUserDeleteResponse">
+        <wsdl:part name="parameters" element="typens:userUserDeleteResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userGroupListRequest">
+        <wsdl:part name="parameters" element="typens:userGroupListRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userGroupListResponse">
+        <wsdl:part name="parameters" element="typens:userGroupListResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressListRequest">
+        <wsdl:part name="parameters" element="typens:userAddressListRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressListResponse">
+        <wsdl:part name="parameters" element="typens:userAddressListResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressCreateRequest">
+        <wsdl:part name="parameters" element="typens:userAddressCreateRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressCreateResponse">
+        <wsdl:part name="parameters" element="typens:userAddressCreateResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressInfoRequest">
+        <wsdl:part name="parameters" element="typens:userAddressInfoRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressInfoResponse">
+        <wsdl:part name="parameters" element="typens:userAddressInfoResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressUpdateRequest">
+        <wsdl:part name="parameters" element="typens:userAddressUpdateRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressUpdateResponse">
+        <wsdl:part name="parameters" element="typens:userAddressUpdateResponseParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressDeleteRequest">
+        <wsdl:part name="parameters" element="typens:userAddressDeleteRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="userAddressDeleteResponse">
+        <wsdl:part name="parameters" element="typens:userAddressDeleteResponseParam" />
+    </wsdl:message>
+    <wsdl:portType name="{{var wsdl.handler}}PortType">
+        <wsdl:operation name="userUserList">
+            <wsdl:documentation>Retrieve users</wsdl:documentation>
+            <wsdl:input message="typens:userUserListRequest" />
+            <wsdl:output message="typens:userUserListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userUserCreate">
+            <wsdl:documentation>Create user</wsdl:documentation>
+            <wsdl:input message="typens:userUserCreateRequest" />
+            <wsdl:output message="typens:userUserCreateResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userUserInfo">
+            <wsdl:documentation>Retrieve user data</wsdl:documentation>
+            <wsdl:input message="typens:userUserInfoRequest" />
+            <wsdl:output message="typens:userUserInfoResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userUserUpdate">
+            <wsdl:documentation>Update user data</wsdl:documentation>
+            <wsdl:input message="typens:userUserUpdateRequest" />
+            <wsdl:output message="typens:userUserUpdateResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userUserDelete">
+            <wsdl:documentation>Delete user</wsdl:documentation>
+            <wsdl:input message="typens:userUserDeleteRequest" />
+            <wsdl:output message="typens:userUserDeleteResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userGroupList">
+            <wsdl:documentation>Retrieve user groups</wsdl:documentation>
+            <wsdl:input message="typens:userGroupListRequest" />
+            <wsdl:output message="typens:userGroupListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userAddressList">
+            <wsdl:documentation>Retrieve user addresses</wsdl:documentation>
+            <wsdl:input message="typens:userAddressListRequest" />
+            <wsdl:output message="typens:userAddressListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userAddressCreate">
+            <wsdl:documentation>Create user address</wsdl:documentation>
+            <wsdl:input message="typens:userAddressCreateRequest" />
+            <wsdl:output message="typens:userAddressCreateResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userAddressInfo">
+            <wsdl:documentation>Retrieve user address data</wsdl:documentation>
+            <wsdl:input message="typens:userAddressInfoRequest" />
+            <wsdl:output message="typens:userAddressInfoResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userAddressUpdate">
+            <wsdl:documentation>Update user address data</wsdl:documentation>
+            <wsdl:input message="typens:userAddressUpdateRequest" />
+            <wsdl:output message="typens:userAddressUpdateResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="userAddressDelete">
+            <wsdl:documentation>Delete user address</wsdl:documentation>
+            <wsdl:input message="typens:userAddressDeleteRequest" />
+            <wsdl:output message="typens:userAddressDeleteResponse" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="userUserList">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userUserCreate">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userUserInfo">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userUserUpdate">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userUserDelete">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userGroupList">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userAddressList">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userAddressCreate">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userAddressInfo">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userAddressUpdate">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="userAddressDelete">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>
