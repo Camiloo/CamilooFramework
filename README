@@ -1,0 +1,24 @@
+We have a few major announcements over the coming weeks, but ahead of those we have a present for developers worldwide. Today we have released, via GitHub, an initial alpha version of a framework for rapid web application development.
+
+The framework is built on the AFL / OSL codebase of Magento eCommerce. We have applied a new visual styling to the Magento frontend and admin area, and have carefully removed all elements of eCommerce, removed some of the built in functionality such as ‘Admin Notifications’ and renamed ‘Customers’ to ‘Users’ on a global basis.
+
+This enables rapid development of web applications such as content management systems, customer relationship managers, intranet portals, appointment managers and more. However, the exciting application (we feel) is in the develop of cloud hosted Software As A Service applications. We will be releasing code onto GitHub over time which will allow users to sign up on the front end, head through payment methods and be granted access to the ‘admin’ area with a special role. There will even be the ability to assign each user a database built from a template foundation, from which all of their data can be securely read.
+
+In Q3 2011, we will be opening an ‘Extension Store’ for the platform. This will allow developers to earn money by publishing their solutions for the Camiloo Framework onto a store. Much like the popular ‘App Store’ on iOS and Android Marketplace is integrated into mobile devices, this store will be baked into the administration area on every installation of the Camiloo Framework. We will handle hosting, bandwidth and payment for developers, and will pay commission on all sales on a monthly basis. The ‘Extension Store’ will also provide update tracking, issue reporting and one-click installation.
+
+Imagine a platform which you could install and turn into a CMS in an instant.
+Or instantly create your own hosted ‘Basecamp’ style project management system.
+A transformable, extendible platform for web 2.0 application development based on a proven and tested platform developed by Magento Inc.
+
+We are in the process of developing ChannelUnity within the CamilooFramework. It is going to be at the core of everything that we do in the next 12 months. Our website will be re-developed as a testament to the flexibility the platform provides, and we will be holding developer days later in the year to excite and interest the developer community.
+
+The alpha version of CamilooFramework can be downloaded from GitHub here:
+https://github.com/Camiloo/CamilooFramework
+
+To download the latest tarball and install this on your server via SSH, simply follow the instructions below:
+wget https://github.com/Camiloo/CamilooFramework/tarball/master –no-check-certificate
+tar -zxvf Camiloo-CamilooFramework-55f25a4.tar.gz (your filename may differ)
+mv Camiloo-CamilooFramework-55f25a4/* Camiloo-CamilooFramework-55f25a4/.htaccess .
+chmod -R o+w media
+
+That’s it – then just visit your URL to complete installation.
